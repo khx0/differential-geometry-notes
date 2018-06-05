@@ -67,6 +67,7 @@
 \newcommand{\dd}[2]{\frac{\df#1}{\df#2}}
 \newcommand{\ddd}[2]{\frac{\df^2#1}{\df#2^2}}
 \newcommand{\dddd}[2]{\frac{\df^3#1}{\df#2^3}}
+\newcommand{\ddddd}[2]{\frac{\df^4#1}{\df#2^4}}
 
 \def\vr{\boldsymbol{r}\xspace}
 \def\vrd{\dot{\vr}\xspace}
@@ -562,8 +563,67 @@ $\vn(s) = \vt'(s) / \kappa$, which we can rearrange to get the first Frenet form
 \end{align}
 In our previous derivation for the torsion in equation \eqref{eq:bprimeExp} we also already derived an expression for $\vb'(s)$ which read
 \begin{align}
-\dd{\vb(s)}{s} = -\tau \, \vn(s)
+\dd{\vb(s)}{s} = -\tau \, \vn(s) \, .
 \end{align}
+Next we revisit
+\begin{align}
+\vn' = \dd{}{s} \left(\vb \times \vt\right) &= \vb' \times \vt \, + \, \vb \times \vt' \\
+&= -\tau \vn \times \vt \, + \, \vb \times \left(\kappa \vn\right) \\
+&= \tau \, \underbrace{\vt \times \vn}_{=\vb} \, -  \, \kappa \, \underbrace{\vn\times\vb}_{=\vt}
+= -\kappa \vt \, + \, \tau \vb \, .
+\end{align}
+We already wrote down an expression for $\vn'$ earlier in equation \eqref{eq:nprimeExp} as
+\begin{align}
+\vn' = \mu \vt + \tau \vb \, ,
+\end{align}
+allowing us to identify that the yet unidentified coefficient $\mu$ in fact turns out to be the curvature $\mu = \kappa$.
+Summarizing the three relations for $\vt'$, $\vn'$ and $\vb'$ prime from the section thus far, we realize that we can write them down as a linear system.
+This set of equations is well known as the \emph{Frenet-Serret} formulae.
+\begin{mybox_tc3}{\emph{Frenet-Serret} formulae}
+	The derivatives of the unit tangent, the unit principal normal and the unit binormal vector satisfy the following linear system, which in matrix form reads
+\begin{align}
+\begin{pmatrix}
+\vt' \\ \vn' \\ \vb'
+\end{pmatrix} = 
+\begin{pmatrix}
+0 & \kappa & 0\\
+-\kappa & 0 & \tau \\
+0 & - \tau & 0 
+\end{pmatrix} 
+\cdot
+\begin{pmatrix}
+\vt \\ \vn \\ \vb
+\end{pmatrix} 
+\end{align}
+For an arbitrary speed parametrization, we realize that
+\begin{align}
+\vt' = \dd{\vt}{s} = \left(\dd{\vt}{t}\right) \left(\dd{t}{s}\right) = \dfrac{1}{v} \, \dot{\vt}
+\end{align}
+meaning that we can rewrite $\vt' = \kappa \vn$ as
+$\dot{\vt} = v\kappa \vn$. Using that we can also write $\vn' = \dot{\vn}/v$ and $\vb' = \dot{\vb}/v$ we find the Frenet-Serret formulae for an arbitrary speed parametrization as
+\begin{align}
+\begin{pmatrix}
+\dot{\vt} \\ \dot{\vn} \\ \dot{\vb}
+\end{pmatrix} = 
+\begin{pmatrix}
+0 & v\kappa & 0\\
+-v\kappa & 0 & v\tau \\
+0 & - v\tau & 0 
+\end{pmatrix} 
+\cdot
+\begin{pmatrix}
+\vt \\ \vn \\ \vb
+\end{pmatrix}  \, ,
+\end{align}
+where $v$ is the parametric speed of the curve as introduced before.
+These equations show the special role of the curvature $\kappa$ and the torsion $\tau$ for space curves. For this reasons the equations
+\begin{align}
+\kappa &= \kappa(s) \\
+\tau &= \tau(s)
+\end{align}
+are called \emph{intrinsic equations} of the curve.
+\end{mybox_tc3}
+
 
 \section{Example: Helical curve}
 We illustrate some of our concepts by calculating some of these quantities for a helical curve
@@ -683,6 +743,104 @@ Both $\vn$ and $\vb$ are unit vectors as required. Now we can eventually compute
 \lim_{b\rightarrow \infty} \tau(s) &= 0
 \end{align}
 In both limiting cases for $b$ the torsion vanishes which is to be expected for a planar circle and a straight line.
+
+\subsection{Recovering the parametric curve from the intrinsic curve equations}
+Using the intrinsic equations $\kappa = \kappa(s)$ and $\tau = \tau(s)$ in conjunction with the Frenet-Serret formulae we can recover the parametric curve, that we started with. For this purpose, we restate the curvature and torsion for the helical curve
+\begin{align}
+\kappa = \dfrac{R\omega^2}{v^2} \qquad \text{and} \qquad \tau = \dfrac{b\omega}{v^2} \, ,
+\end{align}
+which are here both constant.
+By taking the derivative of the first Frenet-Serret formulae we find
+\begin{align}
+\dd{\vt}{s} &= \kappa \vn \\
+\ddd{\vt}{s} &= \kappa \dd{\vn}{s} \\
+\dddd{\vt}{s} &= \kappa \ddd{\vn}{s}
+\end{align}
+Taking the derivative of the second Frenet-Serret formulae with respect to $s$ we obtain
+\begin{align}
+\ddd{\vn}{s} = -\kappa \dd{\vt}{s} + \tau\dd{\vb}{s} = -\kappa \dd{\vt}{s} - \tau^2 \vn \, ,
+\end{align}
+where we inserted the third Frenet-Serret formula in the last step.
+Combining the third derivative of the tangent with our result for the second derivative of the principal normal $\vn$ we get
+\begin{align}
+\dddd{\vt}{s} &= \kappa \ddd{\vn}{s} = \kappa \left(
+-\kappa \dd{\vt}{s} - \tau^2 \vn
+\right) = -\kappa^2 \dd{\vt}{s} - \tau^2 \kappa \vn
+= -\kappa^2 \dd{\vt}{s} - \tau^2 \dd{\vt}{s} = -(\kappa^2 + \tau^2) \dd{\vt}{s} \, ,
+\end{align}
+where we again used the first Frenet-Serret formula $\vn = \vt'/\kappa$.
+Recalling that $\vt' = \dd{\vr}{s}$ we obtain the following fourth order differential equation for the curve $\vr$
+\begin{align}
+\ddddd{\vr}{s} + \left(\kappa^2 + \tau^2\right) \ddd{\vr}{s} = 0 \, .
+\end{align}
+First we simplify the constant coefficient
+\begin{align}
+\kappa ^2 + \tau^2 = \left(\dfrac{\omega}{v}\right)^2
+\end{align}
+such that we need to solve
+\begin{align}
+\ddddd{\vr}{s} +  \left(\dfrac{\omega}{v}\right)^2\ddd{\vr}{s} = 0 \, .
+\end{align}
+This vectorial differential equation has the general solution
+\begin{align}
+\vr(s) = \boldsymbol{C}_0 + \boldsymbol{C}_1 s
++ \boldsymbol{C}_2 \cos\left(\dfrac{\omega s}{v}\right)
++ \boldsymbol{C}_3 \sin\left(\dfrac{\omega s}{v}\right) \, ,
+\end{align}
+where the $\boldsymbol{C}_i$'s are constant integration constants, which are determined by the initial conditions of this differential equation.
+By imposing the initial conditions
+\begin{align}
+\vr(s=0) = 
+\begin{pmatrix}R \\ 0 \\ 0
+\end{pmatrix}, \,\,
+\vr'(s=0) = 
+\begin{pmatrix}0 \\ \omega R/v \\ b/v
+\end{pmatrix}, \,\,
+\vr''(s=0) =
+\begin{pmatrix}
+-\dfrac{\omega^2}{v^2} R \\ 0 \\ 0
+\end{pmatrix}, \,\,
+\vr'''(s=0) =
+\begin{pmatrix}
+0 \\ -\dfrac{\omega^3 R}{v^3} \\ 0
+\end{pmatrix} \, ,
+\end{align}
+we find the following solution for the vectorial integration constants.
+\begin{align}
+\boldsymbol{C}_0 = 
+\begin{pmatrix}0 \\ 0 \\ 0
+\end{pmatrix}, \,\,
+\boldsymbol{C}_1 = 
+\begin{pmatrix}0 \\ 0 \\ b/v
+\end{pmatrix}, \,\,
+\boldsymbol{C}_2 =
+\begin{pmatrix}
+R \\ 0 \\ 0
+\end{pmatrix}, \,\,
+\boldsymbol{C}_3 =
+\begin{pmatrix}
+0 \\ R \\ 0
+\end{pmatrix}
+\end{align}
+Reinserting these integration constant we obtain the parametric solution
+\begin{align}
+\vr(s) = \begin{pmatrix}
+R\cos\left(\dfrac{\omega s}{v}\right) \\
+R\sin\left(\dfrac{\omega s}{v}\right) \\
+\dfrac{bs}{v}
+\end{pmatrix}
+\end{align}
+which we can of course also rewrite be inserting $s = vt$ for the helical curve,
+retrieving our initial parametric curve in arbitrary speed parametrization
+\begin{align}
+\vr(t) = \begin{pmatrix}
+R\cos\left(\omega t\right) \\
+R\sin\left(\omega t\right) \\
+bt
+\end{pmatrix} \, .
+\end{align}
+
+
 
 \end{document}
 
