@@ -620,7 +620,7 @@ $\dot{\vt} = v\kappa \vn$. Using that we can also write $\vn' = \dot{\vn}/v$ and
 \end{pmatrix}  \, ,
 \end{align}
 where $v$ is the parametric speed of the curve as introduced before.
-These equations show the special role of the curvature $\kappa$ and the torsion $\tau$ for space curves. For this reasons the equations
+These equations show the special role of the curvature $\kappa$ and the torsion $\tau$ for space curves. For this reason the equations
 \begin{align}
 \kappa &= \kappa(s) \\
 \tau &= \tau(s)
@@ -847,6 +847,64 @@ bt
 \section{Differential geometry of surfaces}
 
 \section{The metric tensor $g$}
+
+
+\subsection{Metric and area element for spherical coordinates}
+For spherical coordinates, the surface vector $\boldsymbol{f}$ reads
+\begin{align}
+\boldsymbol{f} = \begin{pmatrix}
+R \cos\theta \, \cos\phi \\
+R \cos\theta \, \sin\phi \\
+R \sin\theta
+\end{pmatrix} = R\, \hat{\boldsymbol{e}}_r
+\end{align}
+To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$.
+We find
+\begin{align}
+\partial_{\phi}\boldsymbol{f} = R \begin{pmatrix}
+-\cos\theta\, \sin\phi \\
+\cos\theta\, \cos\phi \\
+0
+\end{pmatrix}
+\quad \text{and} \quad
+\partial_{\theta}\boldsymbol{f} = R \begin{pmatrix}
+-\sin\theta\, \cos\phi \\
+-\sin\theta\, \sin\phi \\
+\cos\theta
+\end{pmatrix}
+ \, .
+\end{align}
+With these two tangential vectors we can calculate all components of the metric tensor.
+\begin{align}
+\partial_{\phi}\boldsymbol{f} \cdot \partial_{\phi}\boldsymbol{f} &= 
+R^2\cos^2\theta \\
+\partial_{\theta}\boldsymbol{f} \cdot \partial_{\theta}\boldsymbol{f} &= 
+R^2 \\
+\partial_{\theta}\boldsymbol{f}\cdot \partial_{\phi}\boldsymbol{f} &= 0
+\end{align}
+Thus we find
+\begin{align}
+g = \begin{pmatrix}
+R^2\, \cos^2\theta & 0 \\
+0 & R^2
+\end{pmatrix} \, ,
+\end{align}
+where we used the convention, that $\phi$ is the first coordinate and $\theta$ the second.
+From the metric tensor we can then immediately read of the differential area element for spherical coordinates by taking the square root of its determinant.
+\begin{align}
+\text{det}(g) = R^4\, \cos^2\theta
+\end{align}
+Thus the differential area element reads
+\begin{align}
+dA = \sqrt{\text{det}(g)} \, d\phi\, d\theta= R^2 \, d\phi \, \cos\theta d\theta
+\end{align}
+This is not the standard convention for spherical coordinates.
+Show both conventions eventually.
+And show that the surface area $A$ is of course on both cases the same.
+\begin{align}
+A = \int\displaylimits_{\partial V} \, dA =  R^2 \int\displaylimits_{0}^{2\pi}\, d\phi \int \displaylimits_{-\pi/2}^{\pi/2} \cos\theta d\theta
+= 2\pi R^2 \biggl[\sin\theta\biggl]_{-\pi/2}^{\pi/2} = 2\pi R^2 \cdot(1-(-1)) = 4\pi R^2
+\end{align}
 
 \section{Almost flat surfaces}
 
