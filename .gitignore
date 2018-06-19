@@ -1,7 +1,8 @@
-# last revision 2018-03-06
+# last revision 2018-06-19
 # khx0@posteo.net
 
 *.pdf
+!DifferentialGeometryPrimer_2018-06-12.pdf
 
 # LaTeX files
 *.aux
