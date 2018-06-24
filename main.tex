@@ -852,25 +852,27 @@ bt
 \subsection{Metric and area element for spherical coordinates}
 For spherical coordinates, the surface vector $\boldsymbol{f}$ reads
 \begin{align}
-\boldsymbol{f} = \begin{pmatrix}
-R \cos\theta \, \cos\phi \\
-R \cos\theta \, \sin\phi \\
-R \sin\theta
-\end{pmatrix} = R\, \hat{\boldsymbol{e}}_r
+	\boldsymbol{f} = \begin{pmatrix}
+		r \sin\theta \, \cos\phi \\
+		r \sin\theta \, \sin\phi \\
+		r \cos\theta
+	\end{pmatrix} = R\, \hat{\boldsymbol{e}}_r
 \end{align}
+
+
 To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$.
 We find
 \begin{align}
-\partial_{\phi}\boldsymbol{f} = R \begin{pmatrix}
--\cos\theta\, \sin\phi \\
-\cos\theta\, \cos\phi \\
+\partial_{\phi}\boldsymbol{f} = r \begin{pmatrix}
+-\sin\theta\, \sin\phi \\
+\sin\theta\, \cos\phi \\
 0
 \end{pmatrix}
 \quad \text{and} \quad
-\partial_{\theta}\boldsymbol{f} = R \begin{pmatrix}
--\sin\theta\, \cos\phi \\
--\sin\theta\, \sin\phi \\
-\cos\theta
+\partial_{\theta}\boldsymbol{f} = r \begin{pmatrix}
+\cos\theta\, \cos\phi \\
+\cos\theta\, \sin\phi \\
+-\sin\theta
 \end{pmatrix}
  \, .
 \end{align}
@@ -906,11 +908,41 @@ A = \int\displaylimits_{\partial V} \, dA =  R^2 \int\displaylimits_{0}^{2\pi}\,
 = 2\pi R^2 \biggl[\sin\theta\biggl]_{-\pi/2}^{\pi/2} = 2\pi R^2 \cdot(1-(-1)) = 4\pi R^2
 \end{align}
 
+\subsection{Other conventions for spherical coordinates}
+There is also another convention for spherical coordinates.
+One can alternatively write the position vector as
+\begin{align}
+	\boldsymbol{f} = \begin{pmatrix}
+		r \cos\theta \, \cos\phi \\
+		r \cos\theta \, \sin\phi \\
+		r \sin\theta
+	\end{pmatrix} = r\, \hat{\boldsymbol{e}}_r \, ,
+\end{align}
+where $\theta$ now runs from $-\pi/2$ to $\pi/2$.
+To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$.
+We find
+\begin{align}
+\partial_{\phi}\boldsymbol{f} = r \begin{pmatrix}
+-\cos\theta\, \sin\phi \\
+\cos\theta\, \cos\phi \\
+0
+\end{pmatrix}
+\quad \text{and} \quad
+\partial_{\theta}\boldsymbol{f} = r \begin{pmatrix}
+-\sin\theta\, \cos\phi \\
+-\sin\theta\, \sin\phi \\
+\cos\theta
+\end{pmatrix}
+\, .
+\end{align}
+
 \section{General formula to calculate surface area}
 \begin{align}
 A = \int\displaylimits_{\partial V} dA = \int\displaylimits_{\partial V}\sqrt{\text{det}(g)} \, d\boldsymbol{u} \, ,
 \end{align}
 where $\boldsymbol{u}$ denotes the independent coordinates.
+
+
 
 \section{Almost flat surfaces}
 
