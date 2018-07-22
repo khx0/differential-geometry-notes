@@ -79,7 +79,7 @@
 \def\vt{\boldsymbol{t}\xspace}
 \def\vn{\boldsymbol{n}\xspace}
 \def\vb{\boldsymbol{b}\xspace}
-
+\def\vf{\boldsymbol{f}\xspace}
 
 \usepackage{hyperref} % load hyperref as last package!
 
@@ -959,6 +959,46 @@ t_x \\
 1- \dfrac{1}{2}(t_x^2 + t_x^2)
 \end{pmatrix} \, .
 \end{align}
+
+
+\section{Differential geometry of a torus}
+Here we consider a torus as an illustrative example for an interesting topological object.
+We consider the surface vector
+\begin{align}
+\vf (\theta, \phi) = 
+\begin{pmatrix}
+\tau (\theta)\cos\phi \\
+\tau (\theta)\sin\phi \\
+r\cos\theta
+\end{pmatrix}
+=
+\begin{pmatrix}
+(R + r\sin\theta) \cos\phi \\
+(R + r\sin\theta) \sin\phi \\
+r\cos\theta
+\end{pmatrix}
+\end{align}
+representing the outer surface of the torus. Here we introduced the abbreviation
+\begin{align}
+\tau (\theta) = R + r \sin\theta
+\end{align}
+
+\begin{align}
+\dfrac{\partial \vf}{\partial \theta} =
+\begin{pmatrix}
+r\cos\theta\cos\phi \\
+r\cos\theta\sin\phi \\
+-r\sin\theta
+\end{pmatrix}
+\qquad \qquad
+\dfrac{\partial \vf}{\partial \phi} =
+\begin{pmatrix}
+-\tau(\theta) \sin\phi\\
+\tau(\theta) \cos\phi \\
+0
+\end{pmatrix}
+\end{align}
+And we also have that $g_{12} = g_{21} = 0$.
 
 \end{document}
 
