@@ -999,6 +999,27 @@ r\cos\theta\sin\phi \\
 \end{pmatrix}
 \end{align}
 And we also have that $g_{12} = g_{21} = 0$.
+For the diagonal entries of the metric tensor we find
+\begin{align}
+g_{11} &= \partial_{\theta}\vf \cdot \partial_{\theta}\vf= 
+r^2\cos^2\theta\cos^2\phi + r^2\cos^2\theta\sin^2\phi + r^2\sin^2\theta = r^2 \\
+g_{22} &= \partial_{\phi}\vf \cdot \partial_{\phi}\vf= \tau^2
+\end{align}
+such that the full metric $2\times 2$ tensor reads
+\begin{align}
+g = \begin{pmatrix}
+r^2 & 0 \\
+0 & \tau^2
+\end{pmatrix}.
+\end{align}
+Its determinant is $\text{det}(g) = r^2\tau^2$ and we can use to calculate the surface area $A$ of the torus.
+\begin{align}
+A &= \int \displaylimits_{0}^{2\pi} d\phi \int \displaylimits_{0}^{\pi} d\theta \sqrt{\text{det}(g)} =
+2\pi \int \displaylimits_{0}^{\pi}  r (R + r\sin\theta) \, d\theta \\
+&= 2\pi^2 rR + 2\pi r^2 \left[-\cos\theta\right]_{0}^{\pi} = 2\pi^2rR + 4\pi r^2
+= 2\pi r^2\left(\pi\dfrac{R}{r} + 2\right).
+\end{align}
+
 
 \end{document}
 
