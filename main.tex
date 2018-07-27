@@ -1012,6 +1012,147 @@ r^2 & 0 \\
 0 & \tau^2
 \end{pmatrix}.
 \end{align}
+Since the metric tensor is diagonal, we also immediately know its inverse
+\begin{align}
+g^{-1} = \begin{pmatrix}
+1/r^2 & 0 \\
+0 & 1/\tau^2
+\end{pmatrix}.
+\end{align}
+We continue to calculate the surface normal.
+\begin{align}
+\dfrac{\partial \vf}{\partial \theta} \times \dfrac{\partial \vf}{\partial \phi} 
+&=
+\begin{pmatrix}
+r\cos\theta\cos\phi \\
+r\cos\theta\sin\phi \\
+-r\sin\theta
+\end{pmatrix}
+\times
+\begin{pmatrix}
+-(R+r\sin\theta)\sin\phi \\
+(R+r\sin\theta)\cos\phi \\
+0
+\end{pmatrix} \\
+&= \begin{pmatrix}
+r\sin\theta(R+r\sin\theta)\cos\phi \\
+r\sin\theta(R+r\sin\theta)\sin\phi \\
+r\cos\theta \tau(\theta)
+\end{pmatrix}
+= \begin{pmatrix}
+\tau(\theta) r \sin\theta \cos\phi \\
+\tau(\theta) r \sin\theta \sin\phi \\
+\tau(\theta) r\cos\theta
+\end{pmatrix}.
+\end{align}
+We also determine the magnitude
+\begin{align}
+|\partial_{\theta}\vf \times \partial_{\phi}\vf | = \sqrt{
+r^2\sin^2\theta \tau^2 \cos^2\phi +
+r^2\sin^2\theta \tau^2 \sin^2\phi +
+r^2\cos^2\theta \tau^2
+}=
+\sqrt{r^2\tau^2} = r\tau \, .
+\end{align}
+The surface normal vector $\vn$ is then given as
+\begin{align}
+\hat{\vn} = -\dfrac{\partial_{\theta}\vf \times \partial_{\phi}\vf}{|\partial_{\theta}\vf \times \partial_{\phi}\vf |}
+= -
+\begin{pmatrix}
+\sin \theta \cos \phi \\
+\sin \theta \sin \phi \\
+\cos \theta
+\end{pmatrix} \, ,
+\end{align}
+where the global minus sign ensures, that the surface normal is pointing outwards.
+We continue by calculating how this normal vector changes with respect to both surface coordinates.
+\begin{align}
+\dfrac{\partial \hat{\vn}}{\partial \theta} = -\begin{pmatrix}
+\cos \theta \cos\phi \\
+\cos \theta \sin\phi \\
+-\sin \theta
+\end{pmatrix}
+\qquad \text{and} \qquad
+\dfrac{\partial \hat{\vn}}{\partial \phi} = -\begin{pmatrix}
+\sin \theta \sin\phi \\
+\sin \theta \cos\phi \\
+0
+\end{pmatrix}
+\end{align}
+With these results we can compute the components $h_{ij}$ of the second fundamental form $h$.
+\begin{align}
+h_{11} &= -\partial_{\theta} \hat{\vn} \cdot \partial_{\theta} \vf =
++ \begin{pmatrix}
+\cos \theta \cos\phi \\
+\cos \theta \sin\phi \\
+-\sin \theta
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+r\cos \theta \cos\phi \\
+\cos \theta \sin\phi \\
+-r\sin \theta
+\end{pmatrix} = r \\
+h_{12} &= -\partial_{\theta} \hat{\vn} \cdot \partial_{\phi} \vf =
++ \begin{pmatrix}
+\cos \theta \cos\phi \\
+\cos \theta \sin\phi \\
+-\sin \theta
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+-\tau \sin\phi \\
+\tau \cos\phi \\
+0
+\end{pmatrix} = 0 \\
+h_{21} &= -\partial_{\phi} \hat{\vn} \cdot \partial_{\theta} \vf =
+- \begin{pmatrix}
+-\sin \theta \sin\phi \\
+\sin \theta \cos\phi \\
+0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+r \cos \theta\cos\phi \\
+r \cos\theta \sin\phi \\
+\dots
+\end{pmatrix} = 0 \\
+h_{22} &= -\partial_{\phi} \hat{\vn} \cdot \partial_{\phi} \vf =
++ \begin{pmatrix}
+-\sin \theta \sin\phi \\
+\sin \theta \cos\phi \\
+0
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+-\tau \sin \phi \\
+\tau \cos\phi \\
+0
+\end{pmatrix} \\
+&= \tau\sin \theta\sin^2\phi + \tau \sin\theta \cos^2\phi = \tau \sin \theta
+\end{align}
+We summarize these results and write the $2\times 2$ matrix form of $h$ below
+\begin{align}
+h = \begin{pmatrix}
+r & 0 \\
+0 & \tau\sin\theta
+\end{pmatrix} \, .
+\end{align}
+Having established the metric tensor $g$, its inverse $g^{-1}$ and the second fundamental form $h$, we can directly compute the \emph{Weingarten matrix} $a$ for the torus.
+\begin{align}
+a = h \cdot g^{-1} =
+\begin{pmatrix}
+r & 0 \\0 & \tau \sin \theta
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1/r^2 & 0 \\0 & 1/\tau^2
+\end{pmatrix} = 
+\begin{pmatrix}
+1/r & 0 \\
+0 & \sin\theta / \tau
+\end{pmatrix}
+\end{align}
 Its determinant is $\text{det}(g) = r^2\tau^2$ and we can use to calculate the surface area $A$ of the torus.
 \begin{align}
 A &= \int \displaylimits_{0}^{2\pi} d\phi \int \displaylimits_{0}^{\pi} d\theta \sqrt{\text{det}(g)} =
