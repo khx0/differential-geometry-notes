@@ -846,6 +846,30 @@ bt
 
 \section{Differential geometry of surfaces}
 
+For surfaces it is useful to consider the two principal curvatures $\kappa_1$ and $\kappa_2$ at each point of the surface. With these two quantities
+one can define the mean curvature $H$ and the \emph{Gaussian} curvature $K$ as
+\begin{align}
+H&:=  \dfrac{\kappa_1 + \kappa_2}{2} = \dfrac{1}{2}\left(\dfrac{1}{R_1} + \dfrac{1}{R_2}\right) \qquad & \text{mean curvature} \\
+K&:= \kappa_1 \cdot \kappa_2 = \dfrac{1}{R_1\cdot R_2} \qquad & \text{Gaussian curvature}
+\end{align}
+One can then for example use the \emph{Gaussian} curvature to classify
+surfaces in the following way.
+\begin{align}
+K(x,y) &>0 \qquad \text{elliptic point (sphere like)} \\
+K(x,y) &<0 \qquad \text{hyperbolic point (saddle like)} \\
+K(x,y) &=0 \qquad \text{parabolic point (cylinder like)}
+\end{align}
+There are two very important theorems about the Gaussian curvature.
+The first one (\emph{Theorema eregium}) states that $K$ depends only on the inner geometry of the surface. The second one is known as \emph{Gauss-Bonnet} theorem, and states, that the surface integral over the \emph{Gaussian} curvature $K$ is equal to a topological constant $2\pi\chi$, where $\chi$ is better known as \emph{Euler characteristic}.
+\begin{align}
+\oint K \, dA = 2 \pi \chi
+\end{align}
+The \emph{Euler characteristic} $\chi$ can also be related to the number of facets ($F$), the number of edges ($E$) and the number of vertices ($V$) of topologically equivalent polyhedra
+\begin{align}
+\chi = F - E + V  \qquad \text{(Euler theorem)}.
+\end{align}
+
+
 \section{The metric tensor $g$}
 
 
@@ -1159,6 +1183,16 @@ A &= \int \displaylimits_{0}^{2\pi} d\phi \int \displaylimits_{0}^{\pi} d\theta 
 2\pi \int \displaylimits_{0}^{\pi}  r (R + r\sin\theta) \, d\theta \\
 &= 2\pi^2 rR + 2\pi r^2 \left[-\cos\theta\right]_{0}^{\pi} = 2\pi^2rR + 4\pi r^2
 = 2\pi r^2\left(\pi\dfrac{R}{r} + 2\right).
+\end{align}
+
+\section{Energy functionals of biomembranes}
+For biomembranes the viscosity is often not relevant, however, it costs energy to bend it
+\begin{align}
+\mathcal{H} = \int \, f(H,K) \, dA \, .
+\end{align}
+By expanding this Hamiltonian in small curvatures (or in other words, in small $1/R$) one obtains the famous \emph{Helfrich-Canham} Hamiltonian
+\begin{align}
+\mathcal{H} = \int \, f(H,K) \, dA \, .
 \end{align}
 
 
