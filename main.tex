@@ -994,6 +994,7 @@ t_x \\
 	\label{fig:torus_cross_section}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Here we consider a torus as an illustrative example for an interesting topological object.
 We consider the surface vector
 \begin{align}
@@ -1242,7 +1243,34 @@ K(\theta = \pm \pi/2) = 0 \quad &\Longrightarrow \quad \text{cylinder-like} \\
 K(\theta = \pi) = \dfrac{-1}{r(a-r)} < 0 \quad &\Longrightarrow \quad \text{saddle-like}
 \end{align}
 In the last case for $\theta = \pi$ we obviously assumed $a > r$. These results are also depicted in
-\ref{fig:torus_cross_section}.
+\ref{fig:torus_cross_section}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.80\textwidth]{./figures/torus_f2}
+	\caption{\textbf{A} Reference coordinate positions for the used surface parametrization of a torus. \textbf{B} A punctured cube as a topologically equivalent polyhedron to a torus.}
+	\label{fig:torus_f2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Euler characteristic}
+Finally we consider the Euler characteristic of a Torus.
+\begin{align}
+\int K \, dA = 2\pi \chi
+\end{align}
+Having established all geometric quantities from the previous sections on the torus, we can directly evaluate the integral over the Gaussian curvature.
+\begin{align}
+\chi &= \dfrac{1}{2\pi} \int \displaylimits_{0}^{2\pi} \int \displaylimits_{0}^{2\pi}
+\sqrt{\text{det}(g)} K(\theta) \, d\theta d\phi
+= \int \displaylimits_{0}^{2\pi} r \tau \, \dfrac{\cos\theta}{r \tau} \, d\theta = 0
+\end{align}
+as to be expected.
+A topologically equivalent polyhedron is for example a punctured cube (see figure \ref{fig:torus_f2}) with $F= 16$ facets, $E = 32$ edges and
+$V = 16$ vertices, which equally has a vanishing Euler characteristic according to
+\begin{align}
+\chi = F - E + V = 16 - 32 + 16 = 0
+\end{align}
 
 \section{Energy functionals of biomembranes}
 For biomembranes the viscosity is often not relevant, however, it costs energy to bend it
