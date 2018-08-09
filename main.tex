@@ -986,6 +986,14 @@ t_x \\
 
 
 \section{Differential geometry of a torus}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.60\textwidth]{./figures/torus_cross_section}
+	\caption{Cross sectional view of a torus with major radius $a$ and minor radius $r$}
+	\label{torus_cross_section}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Here we consider a torus as an illustrative example for an interesting topological object.
 We consider the surface vector
 \begin{align}
@@ -993,21 +1001,20 @@ We consider the surface vector
 \begin{pmatrix}
 \tau (\theta)\cos\phi \\
 \tau (\theta)\sin\phi \\
-r\cos\theta
+r\sin\theta
 \end{pmatrix}
 =
 \begin{pmatrix}
-(R + r\sin\theta) \cos\phi \\
-(R + r\sin\theta) \sin\phi \\
-r\cos\theta
+(a + r\sin\theta) \cos\phi \\
+(a + r\sin\theta) \sin\phi \\
+r\sin\theta
 \end{pmatrix}
 \end{align}
 representing the outer surface of the torus. Here we introduced the abbreviation
 \begin{align}
-\tau (\theta) = R + r \sin\theta
+\tau (\theta) = a + r \sin\theta
 \end{align}
-where $R$ denotes the major and $r$ the minor radius of the torus, respectively.
-\textcolor{red}{What changes if ones uses a cos instead of a sine here?}
+where $a$ denotes the major and $r$ the minor radius of the torus, respectively.
 
 \begin{align}
 \dfrac{\partial \vf}{\partial \theta} =
