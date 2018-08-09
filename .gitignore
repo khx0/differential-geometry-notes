@@ -4,6 +4,8 @@
 *.pdf
 !DifferentialGeometryPrimer_2018-06-19.pdf
 
+!figures/torus_cross_section.pdf
+
 # LaTeX files
 *.aux
 *.glo
