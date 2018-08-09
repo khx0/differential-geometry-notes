@@ -2,9 +2,9 @@
 # khx0@posteo.net
 
 *.pdf
-!DifferentialGeometryPrimer_2018-06-19.pdf
+#!DifferentialGeometryPrimer_2018-06-19.pdf
 
-!figures/torus_cross_section.pdf
+!/figures/*.pdf
 
 # LaTeX files
 *.aux
@@ -34,7 +34,7 @@
 *.mtc1
 *.out
 *.synctex.gz
-*.pdf
+#*.pdf
 *.xwm
 *.bib.bak
 *.bib.sav
