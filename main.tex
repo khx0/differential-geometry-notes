@@ -926,7 +926,7 @@ z
 \end{pmatrix} \, ,
 \end{align}
 where we use the convention, that $\phi = 1$ and $z = 2$ as our arbitrary coordinate enumeration.
-As usual, we start setting up the tangential vectors for this example.
+As usual, we start by setting up the tangential vectors for this example.
 \begin{align}
 \partial_{\phi} \vf = \begin{pmatrix}
 -r \sin\phi \\
@@ -946,13 +946,13 @@ r^2 & 0 \\
 \end{align}
 with determinant
 \begin{align}
-\text{det}(g) = r^2 \qquad \text{and thus also} \qquad \sqrt{\text{det}(g)} = r \, .
+\text{det}(g) = r^2 \qquad \text{and} \qquad \sqrt{\text{det}(g)} = r \, .
 \end{align}
 The differential area element is now
 \begin{align}
 dA = \sqrt{\text{det}(g)} \, d\phi dz = r \, d\phi dz \, .
 \end{align}
-We can quickly verify that this of course also results in the correct surface area of a cylinder
+We can quickly verify that this of course results in the correct surface area of a cylinder
 \begin{align}
 A = \int \displaylimits_{\partial V}\, dA = r \int \displaylimits_{0}^{2\pi}d\phi \int \displaylimits_{0}^{L} \, dz
 = 2\pi r L
@@ -985,7 +985,7 @@ We find
 \end{pmatrix}
  \, .
 \end{align}
-With these two tangential vectors we can calculate all components of the metric tensor.
+With these two tangential vectors we can calculate all components of the metric tensor $g$.
 \begin{align}
 \partial_{\phi}\boldsymbol{f} \cdot \partial_{\phi}\boldsymbol{f} &= 
 r^2\sin^2\theta \\
@@ -1001,7 +1001,7 @@ r^2\, \sin^2\theta & 0 \\
 \end{pmatrix} \, ,
 \end{align}
 where we used the convention, that $\phi$ is the first coordinate and $\theta$ the second as explained above.
-From the metric tensor we can then immediately read of the differential area element for spherical coordinates by taking the square root of its determinant.
+From the metric tensor we can then immediately read off the differential area element for spherical coordinates by taking the square root of its determinant.
 \begin{align}
 \text{det}(g) = r^4\, \sin^2\theta
 \end{align}
@@ -1009,9 +1009,10 @@ Thus the differential area element reads
 \begin{align}
 dA = \sqrt{\text{det}(g)} \, d\phi\, d\theta= r^2 \, d\phi \, \sin\theta d\theta
 \end{align}
+resulting in a total surface area of
 \begin{align}
 A = \int\displaylimits_{\partial V} \, dA =  r^2 \int\displaylimits_{0}^{2\pi}\, d\phi \int \displaylimits_{0}^{\pi} \sin\theta d\theta
-= 2\pi r^2 \biggl[-\cos\theta\biggl]_{0}^{\pi} = 2\pi r^2 \cdot\underbrace{(-(-1)-(-1))}_{=2} = 4\pi r^2
+= 2\pi r^2 \biggl[-\cos\theta\biggl]_{0}^{\pi} = 2\pi r^2 \cdot\underbrace{(-(-1)-(-1))}_{=2} = 4\pi r^2 \, .
 \end{align}
 
 \subsection{Other conventions for spherical coordinates}
@@ -1025,7 +1026,7 @@ One can alternatively write the position vector as
 		r \sin\theta
 	\end{pmatrix} \, ,
 \end{align}
-where $\theta$ now runs from $-\pi/2$ to $\pi/2$.
+where $\theta$ now runs from $-\pi/2$ to $\pi/2$ (as opposed to $\theta\in[0,\pi)$ as for the canonical case).
 To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$. We again agree on using $\phi = 1$ and $\theta = 2$ as our arbitrary enumeration convention.
 We find
 \begin{align}
@@ -1042,7 +1043,7 @@ We find
 \end{pmatrix}
 \, .
 \end{align}
-With these two tangential vectors we can calculate all components of the metric tensor.
+With these two tangential vectors we can again calculate all components of the metric tensor $g$.
 \begin{align}
 \partial_{\phi}\boldsymbol{f} \cdot \partial_{\phi}\boldsymbol{f} &= 
 r^2\cos^2\theta \\
@@ -1061,7 +1062,7 @@ for the metric tensor of spherical coordinates in this coordinate convention.
 The determinant is now
 \begin{align}
 \text{det}(g) = r^4 \cos^2\theta \qquad \text{and accordingly} \qquad
-\sqrt{\text{det}(g)} = r^2\cos\theta \, 
+\sqrt{\text{det}(g)} = r^2\cos\theta \, ,
 \end{align}
 giving rise to the differential area element
 \begin{align}
