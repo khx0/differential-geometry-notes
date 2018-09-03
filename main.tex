@@ -69,6 +69,7 @@
 \newcommand{\dddd}[2]{\frac{\df^3#1}{\df#2^3}}
 \newcommand{\ddddd}[2]{\frac{\df^4#1}{\df#2^4}}
 
+\def\ve{\boldsymbol{e}\xspace}
 \def\vr{\boldsymbol{r}\xspace}
 \def\vrd{\dot{\vr}\xspace}
 \def\vrdd{\ddot{\vr}\xspace}
@@ -873,6 +874,90 @@ The \emph{Euler characteristic} $\chi$ can also be related to the number of face
 \section{The metric tensor $g$}
 
 
+\newpage
+\section{Example for differential geometry of surfaces}
+
+\subsection{A simple plane}
+A simple plane (a two-dimensional surface embedded in 3D space).
+For a simple plane, the surface vector $\bf$ is given by
+\begin{align}
+\vf = \begin{pmatrix}
+x \\ y \\ 0
+\end{pmatrix} \, ,
+\end{align}
+which has the two standard canonical basis vectors as tangential vectors
+\begin{align}
+\partial_x \vf = \hat{\ve}_x \qquad \text{and} \qquad \partial_y\vf = \hat{\ve}_y \, .
+\end{align}
+The metric tensor $g$ of the simple plane is thus of course simply the $2\times 2$ unit matrix
+\begin{align}
+g_{\text{plane}} =  \mathds{1}_{2\times 2} = \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} \, ,
+\end{align} 
+with determinant $\text{det}(g) = 1$ such that also $\sqrt{\text{det}(g)} = 1$.
+Accordingly also the differential area element $dA$ is obviously found as
+\begin{align}
+dA = \sqrt{\text{det}(g)} \, \underbrace{dx dy}_{=\text{independent coordinates}}
+= dx dy
+\end{align}
+confirming the standard result, as expected.
+Since all higher derivatives of the surface vector and its tangential vectors vanish, we immediately realize, that
+the second fundamental form $h$ and the Weingarten matrix $a$ are both zero matrices for the simple plane, \textit{i.e.}
+\begin{align}
+h = a = \begin{pmatrix}
+0 & 0 \\
+0 & 0
+\end{pmatrix}\, .
+\end{align}
+Since these two quantities are zero matrices, we can equally immediately read off, that the mean curvature $H$ and the Gaussian curvature $K$ must accordingly also be vanishing
+\begin{align}
+H = K = 0 \, .
+\end{align}
+
+\subsection{A cylindrical surface}
+Next we consider a cylindrical surface with a surface vector
+\begin{align}
+\vf = \begin{pmatrix}
+r \cos\phi \\
+r \sin\phi \\
+z
+\end{pmatrix} \, ,
+\end{align}
+where we use the convention, that $\phi = 1$ and $z = 2$ as our arbitrary coordinate enumeration.
+As usual, we start setting up the tangential vectors for this example.
+\begin{align}
+\partial_{\phi} \vf = \begin{pmatrix}
+-r \sin\phi \\
+r \cos\phi \\
+0
+\end{pmatrix} \qquad \text{and} \qquad
+\partial_z\vf = \begin{pmatrix}
+0 \\ 0 \\ 1
+\end{pmatrix} = \hat{\ve}_z
+\end{align}
+From the tangential vectors we find the metric tensor $g$ as
+\begin{align}
+g = \begin{pmatrix}
+r^2 & 0 \\
+0 & 1
+\end{pmatrix}
+\end{align}
+with determinant
+\begin{align}
+\text{det}(g) = r^2 \qquad \text{and thus also} \qquad \sqrt{\text{det}(g)} = r \, .
+\end{align}
+The differential area element is now
+\begin{align}
+dA = \sqrt{\text{det}(g)} \, d\phi dz = r \, d\phi dz \, .
+\end{align}
+We can quickly verify that this of course also results in the correct surface area of a cylinder
+\begin{align}
+A = \int \displaylimits_{\partial V}\, dA = r \int \displaylimits_{0}^{2\pi}d\phi \int \displaylimits_{0}^{L} \, dz
+= 2\pi r L
+\end{align}
+
 \subsection{Metric and area element for spherical coordinates}
 For spherical coordinates, the surface vector $\boldsymbol{f}$ reads
 \begin{align}
@@ -880,11 +965,11 @@ For spherical coordinates, the surface vector $\boldsymbol{f}$ reads
 		r \sin\theta \, \cos\phi \\
 		r \sin\theta \, \sin\phi \\
 		r \cos\theta
-	\end{pmatrix} = R\, \hat{\boldsymbol{e}}_r
+	\end{pmatrix} = r \, \hat{\boldsymbol{e}}_r
 \end{align}
 
 
-To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$.
+To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$. We agree on the arbitrary coordinate enumeration using $\phi = 1$ and $\theta = 2$.
 We find
 \begin{align}
 \partial_{\phi}\boldsymbol{f} = r \begin{pmatrix}
@@ -903,36 +988,34 @@ We find
 With these two tangential vectors we can calculate all components of the metric tensor.
 \begin{align}
 \partial_{\phi}\boldsymbol{f} \cdot \partial_{\phi}\boldsymbol{f} &= 
-R^2\cos^2\theta \\
+r^2\sin^2\theta \\
 \partial_{\theta}\boldsymbol{f} \cdot \partial_{\theta}\boldsymbol{f} &= 
-R^2 \\
+r^2 \\
 \partial_{\theta}\boldsymbol{f}\cdot \partial_{\phi}\boldsymbol{f} &= 0
 \end{align}
 Thus we find
 \begin{align}
 g = \begin{pmatrix}
-R^2\, \cos^2\theta & 0 \\
-0 & R^2
+r^2\, \sin^2\theta & 0 \\
+0 & r^2
 \end{pmatrix} \, ,
 \end{align}
-where we used the convention, that $\phi$ is the first coordinate and $\theta$ the second.
+where we used the convention, that $\phi$ is the first coordinate and $\theta$ the second as explained above.
 From the metric tensor we can then immediately read of the differential area element for spherical coordinates by taking the square root of its determinant.
 \begin{align}
-\text{det}(g) = R^4\, \cos^2\theta
+\text{det}(g) = r^4\, \sin^2\theta
 \end{align}
 Thus the differential area element reads
 \begin{align}
-dA = \sqrt{\text{det}(g)} \, d\phi\, d\theta= R^2 \, d\phi \, \cos\theta d\theta
+dA = \sqrt{\text{det}(g)} \, d\phi\, d\theta= r^2 \, d\phi \, \sin\theta d\theta
 \end{align}
-This is not the standard convention for spherical coordinates.
-Show both conventions eventually.
-And show that the surface area $A$ is of course on both cases the same.
 \begin{align}
-A = \int\displaylimits_{\partial V} \, dA =  R^2 \int\displaylimits_{0}^{2\pi}\, d\phi \int \displaylimits_{-\pi/2}^{\pi/2} \cos\theta d\theta
-= 2\pi R^2 \biggl[\sin\theta\biggl]_{-\pi/2}^{\pi/2} = 2\pi R^2 \cdot(1-(-1)) = 4\pi R^2
+A = \int\displaylimits_{\partial V} \, dA =  r^2 \int\displaylimits_{0}^{2\pi}\, d\phi \int \displaylimits_{0}^{\pi} \sin\theta d\theta
+= 2\pi r^2 \biggl[-\cos\theta\biggl]_{0}^{\pi} = 2\pi r^2 \cdot\underbrace{(-(-1)-(-1))}_{=2} = 4\pi r^2
 \end{align}
 
 \subsection{Other conventions for spherical coordinates}
+
 There is also another convention for spherical coordinates.
 One can alternatively write the position vector as
 \begin{align}
@@ -940,10 +1023,10 @@ One can alternatively write the position vector as
 		r \cos\theta \, \cos\phi \\
 		r \cos\theta \, \sin\phi \\
 		r \sin\theta
-	\end{pmatrix} = r\, \hat{\boldsymbol{e}}_r \, ,
+	\end{pmatrix} \, ,
 \end{align}
 where $\theta$ now runs from $-\pi/2$ to $\pi/2$.
-To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$.
+To find the metric tensor $g$ we must take the derivatives of $\boldsymbol{f}$ with respect to both angles $\theta$ and $\phi$. We again agree on using $\phi = 1$ and $\theta = 2$ as our arbitrary enumeration convention.
 We find
 \begin{align}
 \partial_{\phi}\boldsymbol{f} = r \begin{pmatrix}
@@ -959,6 +1042,68 @@ We find
 \end{pmatrix}
 \, .
 \end{align}
+With these two tangential vectors we can calculate all components of the metric tensor.
+\begin{align}
+\partial_{\phi}\boldsymbol{f} \cdot \partial_{\phi}\boldsymbol{f} &= 
+r^2\cos^2\theta \\
+\partial_{\theta}\boldsymbol{f} \cdot \partial_{\theta}\boldsymbol{f} &= 
+r^2 \\
+\partial_{\theta}\boldsymbol{f}\cdot \partial_{\phi}\boldsymbol{f} &= 0
+\end{align}
+Thus we find
+\begin{align}
+g = \begin{pmatrix}
+r^2\, \cos^2\theta & 0 \\
+0 & r^2
+\end{pmatrix} \, 
+\end{align}
+for the metric tensor of spherical coordinates in this coordinate convention.
+The determinant is now
+\begin{align}
+\text{det}(g) = r^4 \cos^2\theta \qquad \text{and accordingly} \qquad
+\sqrt{\text{det}(g)} = r^2\cos\theta \, 
+\end{align}
+giving rise to the differential area element
+\begin{align}
+dA = \sqrt{\text{det}(g)} \, d\phi d\theta = r^2 \, d\phi \, \cos\theta d\theta.
+\end{align}
+
+
+\begin{mybox_tc3}{Area of a sphere in different coordinate conventions}
+Although we can have different coordinate conventions for spherical coordinates, it is important to stress that
+many physical quantities such as the surface area of the sphere are of course invariant with respect to these conventions.
+For the first canonical convention with
+\begin{align}
+\boldsymbol{f} = r\begin{pmatrix}
+\sin\theta \, \cos\phi \\
+\sin\theta \, \sin\phi \\
+\cos\theta
+\end{pmatrix} = r \, \hat{\boldsymbol{e}}_r
+\end{align} we have that $\theta \in [0, \pi)$ and $\phi \in [0, 2\pi)$, and get
+\begin{align}
+dA = r^2 \, d\phi\, \sin\theta d\theta 
+\end{align}
+giving of course $A = 4\pi r^2$.
+
+Using the second convention discussed here
+\begin{align}
+\boldsymbol{f} = r\begin{pmatrix}
+\cos\theta \, \cos\phi \\
+\cos\theta \, \sin\phi \\
+\sin\theta
+\end{pmatrix} \, ,
+\end{align}
+where $\theta \in [-\pi/2, \pi/2)$] and $\phi\in[0,2\pi)$, we obtain a different expression for the differential area element
+\begin{align}
+dA = r^2 \, d\phi\, \cos\theta d\theta \, ,
+\end{align}
+but of course the same surface area $A = 4\pi r^2$, as can be seen by direct integration below.
+\begin{align}
+A = \int\displaylimits_{\partial V} \, dA =  r^2 \int\displaylimits_{0}^{2\pi}\, d\phi \int \displaylimits_{-\pi/2}^{\pi/2} \cos\theta d\theta
+= 2\pi r^2 \biggl[\sin\theta\biggl]_{-\pi/2}^{\pi/2} = 2\pi r^2 \cdot(1-(-1)) = 4\pi r^2
+\end{align}
+\end{mybox_tc3}
+
 
 \section{General formula to calculate surface area}
 \begin{align}
