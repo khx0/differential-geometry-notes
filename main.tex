@@ -1426,14 +1426,48 @@ By expanding this Hamiltonian in small curvatures (or in other words, in small $
 \mathcal{H} = \int \, f(H,K) \, dA \, .
 \end{align}
 
+\section{Relation between the metrix and the Jacobian}
+We repeat the definition of the \emph{Jacobian} matrix
+\begin{align}
+J = \left(
+\dfrac{\partial x_i}{\partial y_j}
+\right)_{ij}
+\end{align}
+\textit{I.e.} for a mapping $f:\mathds{R}^n \longrightarrow \mathds{R}^m$, the Jacobian matrix reads
+\begin{align}
+J_f(a) = \begin{pmatrix}
+\dfrac{\partial f_1(a)}{\partial x_1} & \dfrac{\partial f_1(a)}{\partial x_2} & \dots & \dfrac{\partial f_1(a)}{\partial x_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\dfrac{\partial f_m(a)}{\partial x_1} & \dfrac{\partial f_m(a)}{\partial x_2} & \dots & \dfrac{\partial f_m(a)}{\partial x_n}
+\end{pmatrix}
+\end{align}
+
+\section{To sort in}
+\begin{align}
+d\Omega &= \sin \theta d\theta d\phi \\
+\int d\Omega &= 4\pi
+\end{align}
+
+\section{Higher dimensional spheres}
+We consider volume of the $n$ dimensional sphere.
+The volume element is
+\begin{align}
+d^nx = r^{n-1} dr d\phi \cdot \prod_{k=1}^{n-2}\sin^k(\theta_k) d\theta_k \, .
+\end{align}
+Thus the volume of a full sphere $D_R^n$ with radius $R$ is
+\begin{align}
+V_n(R) = \dfrac{\pi^{n/2}}{\Gamma(1 + n/2)} \, R^n
+\end{align}
+
+The surface area of the $n$ dimensional unit sphere $A_n$ is given by
+\begin{align}
+A_n &= \dfrac{\partial}{\partial r}(V_n(r)) = \dfrac{\partial}{\partial r}
+\left(
+\dfrac{\pi^{n/2}r^n}{\Gamma(1+n/2)}
+\right) \\
+&= n\cdot r^{n-1} \dfrac{\pi^{n/2}}{\Gamma(n/2 + 1)} = 2\cdot r^{n-1} \dfrac{\pi^{n/2}}{\Gamma(n/2)} \\
+&= \int \Omega_n
+\end{align}
 
 \end{document}
-
-
-
-
-
-
-
-
 
