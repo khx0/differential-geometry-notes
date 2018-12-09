@@ -1,11 +1,13 @@
 #!/bin/bash
+##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# compile local TeX files
-# date: 2018-06-04
+# file: build.sh
+# date: 2018-12-09
+# builds local TeX document from source
 ##########################################################################################
 
-# tex sheet
+# tex main document
 pdflatex main.tex
 bibtex main.aux
 pdflatex main.tex
@@ -14,4 +16,3 @@ pdflatex main.tex
 
 # clean up auxiliary files
 rm *.aux *.log  *.out *.toc *.bbl *.blg *.xwm
-
