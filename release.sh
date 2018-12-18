@@ -1,11 +1,13 @@
 #!/bin/bash
+##########################################################################################
 # author: Nikolas Schnellbaecher
 # contact: khx0@posteo.net
-# compile local TeX files
-# date: 2018-06-04
+# file: release.sh
+# date: 2018-09-07
+# build and release local TeX document from source with timestamp
 ##########################################################################################
 
-# tex sheet
+# tex document
 pdflatex main.tex
 bibtex main.aux
 pdflatex main.tex
